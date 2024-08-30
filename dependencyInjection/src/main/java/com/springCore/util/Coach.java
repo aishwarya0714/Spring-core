@@ -1,4 +1,4 @@
-package com.springCore.dependencyInjection;
+package com.springCore.util;
 
 public interface Coach {
 
