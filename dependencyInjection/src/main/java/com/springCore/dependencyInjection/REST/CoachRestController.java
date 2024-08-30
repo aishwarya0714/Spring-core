@@ -2,6 +2,7 @@ package com.springCore.dependencyInjection.REST;
 
 import com.springCore.util.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,19 +13,12 @@ public class CoachRestController {
     private Coach myCoach;
 
 //    create constructor of class - constructor injection
-//    @Autowired
-//    public CoachRestController(Coach theCoach){
-//        myCoach=theCoach;
-//    }
-
-//    use setter injection
+//    when your working with multiple components use Qualifier t access them
     @Autowired
-    public void anyName(Coach theCoach){
+    public CoachRestController(@Qualifier("cricketCoach") Coach theCoach){
         myCoach=theCoach;
     }
 
-
-//    expose endpoint for daily workout
     @GetMapping("/getDailyWorkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
