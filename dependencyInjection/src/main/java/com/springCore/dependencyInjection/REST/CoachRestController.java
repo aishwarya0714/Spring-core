@@ -11,11 +11,18 @@ public class CoachRestController {
 //    inject interface here and give it name
     private Coach myCoach;
 
-//    create constructor of class
+//    create constructor of class - constructor injection
+//    @Autowired
+//    public CoachRestController(Coach theCoach){
+//        myCoach=theCoach;
+//    }
+
+//    use setter injection
     @Autowired
-    public CoachRestController(Coach theCoach){
+    public void anyName(Coach theCoach){
         myCoach=theCoach;
     }
+
 
 //    expose endpoint for daily workout
     @GetMapping("/getDailyWorkout")
