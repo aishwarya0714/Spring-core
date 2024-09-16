@@ -9,4 +9,8 @@ public class BaseballCoach implements Coach{
     public String getDailyWorkout() {
         return "Practice Baseball!";
     }
+
+    public BaseballCoach(){
+        System.out.println("In constructor: " + getClass().getSimpleName());
+    }
 }

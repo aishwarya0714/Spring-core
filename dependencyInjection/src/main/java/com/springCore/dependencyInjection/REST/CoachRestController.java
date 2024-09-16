@@ -14,18 +14,13 @@ public class CoachRestController {
 
 //    create constructor of class - constructor injection
 //    when your working with multiple components use Qualifier t access them
-//    @Autowired
-//    public CoachRestController(@Qualifier("cricketCoach") Coach theCoach){
-//        myCoach=theCoach;
-//    }
-//
-
-//    when you want to use @primary
-
     @Autowired
-    public CoachRestController(Coach theCoach){
+    public CoachRestController(@Qualifier("baseballCoach") Coach theCoach){
         myCoach=theCoach;
     }
+
+
+//
 
 
     @GetMapping("/getDailyWorkout")
